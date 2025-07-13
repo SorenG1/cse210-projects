@@ -1,15 +1,5 @@
 using System;
 
-/*
-CREATIVITY AND EXCEEDING CORE REQUIREMENTS:
-1. Enhanced user experience with clear menu formatting and feedback messages
-2. Improved prompt variety with 5 meaningful reflection questions
-3. Better error handling in file operations (checks if file exists before loading)
-4. Student-friendly variable names (promptList, todayResponse) for code readability
-5. Clean separation of concerns with dedicated methods for each operation
-6. Added visual formatting with "=== My Journal Entry ===" headers for better readability
-*/
-
 class Program
 {
     static void Main(string[] args)
@@ -96,15 +86,6 @@ class Program
     {
         Console.Write("Enter filename to load from: ");
         string filename = Console.ReadLine();
-        // Check if file exists before loading
-        if (System.IO.File.Exists(filename))
-        {
-            myJournal.Load(filename);
-            Console.WriteLine("Journal loaded.");
-        }
-        else
-        {
-            Console.WriteLine("File not found. Please check the filename and try again.");
-        }
+        myJournal.Load(filename);
     }
 }
