@@ -47,15 +47,17 @@ public class ReflectingActivity : Activity
         ShowCountDown(5);
         Console.Clear();
         
-        // Show questions - simple approach
-        int questionTime = 15; // Each question gets 15 seconds
-        int totalQuestions = _duration / questionTime;
+        // Show questions for the exact duration like teacher wants
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
         
-        for (int i = 0; i < totalQuestions; i++)
+        while (DateTime.Now < endTime)
         {
             int questionIndex = random.Next(_questions.Count);
             Console.Write("> " + _questions[questionIndex] + " ");
-            ShowSpinner(15);
+            
+            // Show spinner for several seconds before next question
+            ShowSpinner(10);
             Console.WriteLine();
             Console.WriteLine();
         }
