@@ -1,0 +1,27 @@
+[33mc76dd11[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD~3
+[33mb82857b[m HEAD@{1}: reset: moving to HEAD~3
+[33mc9b9de1[m HEAD@{2}: rebase (pick): Clean up journal program - revert to student-friendly version
+[33mfb09b21[m HEAD@{3}: rebase (pick): Complete W02 Journal Program with abstraction and enhanced features
+[33m4b072a0[m HEAD@{4}: rebase (pick): Add Job and Resume classes with Display methods
+[33mb82857b[m HEAD@{5}: commit (amend): Updated commit message
+[33mf008c52[m HEAD@{6}: cherry-pick: Complete Week 4 Online Ordering Program - Foundation #2
+[33m4ca5f20[m HEAD@{7}: cherry-pick: Complete W03 Scripture Memorizer Project - Demonstrate Encapsulation with Word Hiding Program
+[33m0b3df3d[m HEAD@{8}: cherry-pick: Complete W03 Fractions Learning Activity - Demonstrate Encapsulation principles
+[33mc76dd11[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{9}: reset: moving to c76dd11
+[33m8c59b3b[m HEAD@{10}: rebase (abort): returning to refs/heads/main
+[33m8c59b3b[m HEAD@{11}: rebase (abort): returning to refs/heads/main
+[33mabaf270[m HEAD@{12}: reset: moving to HEAD~3
+[33mcc92c12[m HEAD@{13}: reset: moving to HEAD~3
+[33m8c59b3b[m HEAD@{14}: commit: Fix Mindfulness Program to exactly match teacher requirements and specifications
+[33m066c201[m HEAD@{15}: commit: Simplify Mindfulness Program to authentic student-level coding style
+[33m2b03cb9[m HEAD@{16}: commit: Complete W05 Mindfulness Program with Inheritance and Creativity Features
+[33mcc92c12[m HEAD@{17}: commit: Add screenshot for W04 YouTube Video Program assignment
+[33md7a0003[m HEAD@{18}: commit: Complete W04 YouTube Video Program - Foundation #1 Assignment
+[33m4b2d7a0[m HEAD@{19}: commit: Complete W05 Learning Activity - Inheritance with Assignment Classes
+[33mabaf270[m HEAD@{20}: commit: Complete Week 4 Online Ordering Program - Foundation #2
+[33m1ebd41a[m HEAD@{21}: commit: Complete W03 Scripture Memorizer Project - Demonstrate Encapsulation with Word Hiding Program
+[33m08cd7c3[m HEAD@{22}: commit: Complete W03 Fractions Learning Activity - Demonstrate Encapsulation principles
+[33mae2e029[m HEAD@{23}: commit: Clean up journal program - revert to student-friendly version
+[33m4609170[m HEAD@{24}: commit: Complete W02 Journal Program with abstraction and enhanced features
+[33maa83277[m HEAD@{25}: commit: Add Job and Resume classes with Display methods
+[33mc76dd11[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{26}: clone: from https://github.com/SorenG1/cse210-projects
