@@ -44,32 +44,23 @@ public class Activity
     // Show spinner animation
     public void ShowSpinner(int seconds)
     {
-        List<string> animationStrings = new List<string>();
-        animationStrings.Add("|");
-        animationStrings.Add("/");
-        animationStrings.Add("-");
-        animationStrings.Add("\\");
-        animationStrings.Add("|");
-        animationStrings.Add("/");
-        animationStrings.Add("-");
-        animationStrings.Add("\\");
-
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(seconds);
-
-        int i = 0;
-        while (DateTime.Now < endTime)
+        for (int i = 0; i < seconds; i++)
         {
-            string s = animationStrings[i];
-            Console.Write(s);
+            Console.Write("|");
             Thread.Sleep(500);
             Console.Write("\b \b");
-
-            i++;
-            if (i >= animationStrings.Count)
-            {
-                i = 0;
-            }
+            
+            Console.Write("/");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            
+            Console.Write("-");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            
+            Console.Write("\\");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
         }
     }
 

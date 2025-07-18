@@ -11,10 +11,11 @@ public class BreathingActivity : Activity
     {
         DisplayStartingMessage();
         
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(_duration);
+        // Simple way to count breaths for the duration
+        int breathTime = 10; // Each breath cycle takes 10 seconds
+        int totalBreaths = _duration / breathTime;
         
-        while (DateTime.Now < endTime)
+        for (int i = 0; i < totalBreaths; i++)
         {
             Console.Write("Breathe in...");
             ShowCountDown(4);

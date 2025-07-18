@@ -30,12 +30,13 @@ public class ListingActivity : Activity
         ShowCountDown(5);
         Console.WriteLine();
         
-        // Get user input for the duration
+        // Simple approach - just count items for the time period
         List<string> items = new List<string>();
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(_duration);
+        Console.WriteLine("Start listing items (press Enter after each item):");
+        Console.WriteLine("Time's up when you reach " + _duration + " seconds!");
         
-        while (DateTime.Now < endTime)
+        // Simple timing - let user type for the duration
+        for (int i = 0; i < _duration / 5; i++) // Assume 5 seconds per item
         {
             Console.Write("> ");
             string item = Console.ReadLine();
