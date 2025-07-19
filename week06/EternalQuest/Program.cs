@@ -13,7 +13,7 @@ namespace ConsoleApp1
             string choice = "";
             while (choice != "6")
             {
-                Console.WriteLine($"You have {_score} points.");
+                DisplayPlayerInfo();
                 Console.WriteLine();
                 Console.WriteLine("Menu Options:");
                 Console.WriteLine("  1. Create New Goal");
@@ -35,17 +35,23 @@ namespace ConsoleApp1
                 }
                 else if (choice == "3")
                 {
-                    Console.WriteLine("Save functionality not implemented yet.");
+                    SaveGoals();
                 }
                 else if (choice == "4")
                 {
-                    Console.WriteLine("Load functionality not implemented yet.");
+                    LoadGoals();
                 }
                 else if (choice == "5")
                 {
                     RecordEvent();
                 }
             }
+        }
+
+        static void DisplayPlayerInfo()
+        {
+            int level = _score / 1000 + 1;
+            Console.WriteLine($"You have {_score} points. Level: {level}");
         }
 
         static void CreateGoal()
@@ -111,7 +117,6 @@ namespace ConsoleApp1
 
             Console.WriteLine($"Congratulations! You have earned {goal.GetPoints()} points!");
 
-            // Check for bonus if it's a checklist goal
             if (goal is ChecklistGoal)
             {
                 ChecklistGoal checklistGoal = (ChecklistGoal)goal;
@@ -123,6 +128,79 @@ namespace ConsoleApp1
             }
 
             Console.WriteLine($"You now have {_score} points.");
+        }
+
+        static void SaveGoals()
+        {
+            Console.Write("What is the filename for the goal file? ");
+            string filename = Console.ReadLine();
+
+            using (StreamWriter outputFile = new StreamWriter(filename))
+            {
+                outputFile.WriteLine(_score);
+                foreach (Goal goal in _goals)
+                {
+                    outputFile.WriteLine(goal.GetStringRepresentation());
+                }
+            }
+        }
+
+        static void LoadGoals()
+        {
+            Console.Write("What is the filename for the goal file? ");
+            string filename = Console.ReadLine();
+
+            string[] lines = System.IO.File.ReadAllLines(filename);
+            _score = int.Parse(lines[0]);
+
+            _goals.Clear();
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split(":");
+                string goalType = parts[0];
+                string[] details = parts[1].Split(",");
+
+                if (goalType == "SimpleGoal")
+                {
+                    string name = details[0];
+                    string description = details[1];
+                    int points = int.Parse(details[2]);
+                    bool isComplete = bool.Parse(details[3]);
+
+                    SimpleGoal goal = new SimpleGoal(name, description, points);
+                    if (isComplete)
+                    {
+                        goal.RecordEvent();
+                    }
+                    _goals.Add(goal);
+                }
+                else if (goalType == "EternalGoal")
+                {
+                    string name = details[0];
+                    string description = details[1];
+                    int points = int.Parse(details[2]);
+
+                    EternalGoal goal = new EternalGoal(name, description, points);
+                    _goals.Add(goal);
+                }
+                else if (goalType == "ChecklistGoal")
+                {
+                    string name = details[0];
+                    string description = details[1];
+                    int points = int.Parse(details[2]);
+                    int bonus = int.Parse(details[3]);
+                    int target = int.Parse(details[4]);
+                    int amountCompleted = int.Parse(details[5]);
+
+                    ChecklistGoal goal = new ChecklistGoal(name, description, points, target, bonus);
+                    for (int j = 0; j < amountCompleted; j++)
+                    {
+                        goal.RecordEvent();
+                    }
+                    _goals.Add(goal);
+                }
+            }
         }
     }
 }

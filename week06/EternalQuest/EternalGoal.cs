@@ -22,5 +22,10 @@ namespace ConsoleApp1
         {
             return $"[ ] {_shortName} ({_description})";
         }
+
+        public override string GetStringRepresentation()
+        {
+            return $"EternalGoal:{_shortName},{_description},{_points}";
+        }
     }
 }

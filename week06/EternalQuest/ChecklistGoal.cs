@@ -37,9 +37,19 @@ namespace ConsoleApp1
             }
         }
 
+        public override string GetStringRepresentation()
+        {
+            return $"ChecklistGoal:{_shortName},{_description},{_points},{_bonus},{_target},{_amountCompleted}";
+        }
+
         public int GetBonus()
         {
             return _bonus;
+        }
+
+        public int GetAmountCompleted()
+        {
+            return _amountCompleted;
         }
     }
 }
