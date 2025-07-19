@@ -47,7 +47,7 @@ public class ReflectingActivity : Activity
         ShowCountDown(5);
         Console.Clear();
         
-        // Show questions for the exact duration like teacher wants
+        // Show questions
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         
@@ -56,7 +56,6 @@ public class ReflectingActivity : Activity
             int questionIndex = random.Next(_questions.Count);
             Console.Write("> " + _questions[questionIndex] + " ");
             
-            // Show spinner for several seconds before next question
             ShowSpinner(10);
             Console.WriteLine();
             Console.WriteLine();

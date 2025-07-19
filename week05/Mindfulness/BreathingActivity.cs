@@ -11,7 +11,7 @@ public class BreathingActivity : Activity
     {
         DisplayStartingMessage();
         
-        // Use DateTime to continue for exact duration like teacher showed
+        // Use DateTime to continue for exact duration
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         

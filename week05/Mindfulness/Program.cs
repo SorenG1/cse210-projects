@@ -1,14 +1,5 @@
 using System;
 
-/*
-CREATIVITY AND EXCEEDING REQUIREMENTS:
-1. Added a counter to track how many times each activity has been performed during the session
-2. Added a "View Session Stats" menu option to see activity usage
-3. Enhanced the breathing activity with variable breath timing for more realistic breathing patterns
-4. Added extra prompts and questions to the reflection and listing activities for more variety
-5. Improved the user interface with clear formatting and better spacing
-*/
-
 class Program
 {
     static void Main(string[] args)
